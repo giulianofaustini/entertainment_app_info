@@ -5,7 +5,7 @@ import { NavBar } from "./components/NavBar";
 import { Activity } from "./pages/Activity";
 import { WheaterFetch } from "./pages/WheaterFetch"
 import { FirstWebPage } from "./pages/FirstWebPage";
-
+import { Tv } from "./pages/Tv";
 
 
 import "./App.css";
@@ -19,7 +19,8 @@ function App() {
         <Routes>
         <Route path="/" element={<FirstWebPage/> } />
         <Route path="/Activity" element={<Activity/> } />
-        <Route path="/WheaterFetch" element={<WheaterFetch/> } />
+        <Route path="/WheaterFetch" element={<WheaterFetch />} />
+        <Route path="/Tv" element={<Tv />} />
       </Routes>
     </Router>
   </div>

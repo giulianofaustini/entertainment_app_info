@@ -22,6 +22,7 @@ export const WheaterFetch = () => {
         console.log(res.data);
         const weatherInfo = res.data;
         setWeatherData(weatherInfo);
+        setCity('')
       })
       .catch((error) => {
         console.error("Error fetching weather data:", error);
@@ -45,15 +46,15 @@ export const WheaterFetch = () => {
         <FeatherIcons className="search" />
       </div>
       {weatherData && (
-        <div className="info" >
+          <><p className="description"> {weatherData.weather[0].description} </p><div className="info">
           <div className="temp"> Temperature </div>
           <p className="tempInfo">  {weatherData.main.temp} </p>
           <div className="feelsLike"> Feels like </div>
-          <p className="feelsLikeInfo" > {weatherData.main.feels_like} </p>
-          <p className="description"> {weatherData.weather[0].description} </p>
-          <div className="wind"> {weatherData.wind.speed}</div>
-          
-          </div>
+          <p className="feelsLikeInfo"> {weatherData.main.feels_like} </p>
+
+          <div className="wind"> Wind speed in km/h</div>
+          <p>{weatherData.wind.speed}</p>
+        </div></>
       )}
 
       <div></div>

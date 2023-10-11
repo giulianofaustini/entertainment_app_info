@@ -48,6 +48,27 @@
   font-stretch:wider;
   font-weight: bold;
   color: black;
+}
+
+.info {
   
- 
+  display: grid;
+  grid-template-columns:repeat(2, 1fr);
+  grid-template-areas:
+  "temp tempInfo"
+    "feelsLike feelsLikeInfo"
+    "description description"
+    "wind wind";
+    align-items: center;
+    gap: 1;
+    margin-top: 10px;
+    margin-right: 20%;
+    margin-left: 50%;
+}
+
+.description {
+font-size: 70px;
+text-align: left;
+  margin-left: 10%;
+  
 }
