@@ -30,7 +30,7 @@ const Activity = () => {
 
   return (
     <div>
-      <h1>The Activity Page renders activity ideas</h1>
+      <h1>PICK AN ACTIVITY FOR TODAY</h1>
 
       <label htmlFor="typeSelect">Select The activity based on Type:</label>
       <div>

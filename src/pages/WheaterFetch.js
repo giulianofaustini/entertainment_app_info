@@ -30,7 +30,7 @@ export const WheaterFetch = () => {
 
   return (
     <div>
-      <h1>The Weather Page</h1>
+      <h1>WHAT IS THE WEATHER LIKE IN ...</h1>
       
         <div className="input-container">
           <label htmlFor="cityInput"> </label>
