@@ -1,10 +1,18 @@
-import React from 'react'
-
+import React from 'react';
 
 const FirstWebPage = () => {
-  return (
-    <div>FirstWebPage</div>
-  )
-}
+  const containerStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+  };
 
-export {FirstWebPage}
+  return (
+    <div style={containerStyle}>
+      MAKE YOUR DAY A GOOD DAY WITH THE IDEAS APP
+    </div>
+  );
+};
+
+export { FirstWebPage };
