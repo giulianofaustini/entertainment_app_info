@@ -23,25 +23,30 @@
 .input-container {
   display: flex;
   align-items: center; 
-  margin: 70px 120px;
+  margin-left: 30%;
+  margin-right: 30%;
   justify-content: space-between;
   margin-top: 30px;
   
+  
+}
+
+.search{
+  
+  border: none ;
+  width:80px;
+  background-color: white;
+  text-decoration: none;
 }
 
 
 .input-with-icon {
-  flex: 1; 
-  height: 27px;
-  margin-top: 5px;
+ flex: auto;
+  height: 33px;
+  margin-top: 0px;
 }
 
 
-.search {
-  fill: white; 
-  cursor: pointer;
-  height: 30px;
-}
 
 
 ::placeholder {

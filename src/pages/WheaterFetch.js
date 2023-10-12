@@ -1,17 +1,14 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
-import { FeatherIcons } from "../support/FeatherIcons";
+
 
 export const WheaterFetch = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [city, setCity] = useState("");
 
-  const apiKey = "e752728474b54c1023084d2fb696497d";
+  const apiKey = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
-    if (city) {
-      getWeather();
-    }
   }, [city]);
 
   const getWeather = () => {
@@ -29,23 +26,26 @@ export const WheaterFetch = () => {
         setWeatherData(null);
       });
   };
+ 
 
   return (
     <div>
       <h1>The Weather Page</h1>
-      <div className="input-container">
-        <label htmlFor="cityInput"> </label>
-        <input
-          type="text"
-          id="cityInput"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-          placeholder="Enter city"
-          className="input-with-icon"
-        />
-        <FeatherIcons className="search" />
-      </div>
-      {weatherData && (
+      
+        <div className="input-container">
+          <label htmlFor="cityInput"> </label>
+          <input
+            type="text"
+            id="cityInput"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            placeholder="Enter city"
+            className="input-with-icon"
+          />
+          <button style={{ height: "38px" }} onClick={getWeather} className="search" > search </button>
+        </div>
+      
+        {weatherData && (
           <><p className="description"> {weatherData.weather[0].description} </p><div className="info">
           <div className="temp"> Temperature </div>
           <p className="tempInfo">  {weatherData.main.temp} </p>
@@ -56,8 +56,6 @@ export const WheaterFetch = () => {
           <p>{weatherData.wind.speed}</p>
         </div></>
       )}
-
-      <div></div>
     </div>
   );
 };
