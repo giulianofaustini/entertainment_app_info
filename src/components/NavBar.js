@@ -10,6 +10,7 @@ export const NavBar = () => {
         <Link to="/Activity">Activity</Link>
         <Link to="/WheaterFetch">Wheater</Link>
         <Link to="/Tv">Tv Shows</Link>
+        <Link to="/NasaPictures"> Nasa </Link>
       </div>
     </div>
   );

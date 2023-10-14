@@ -3,20 +3,17 @@ import axios from "axios";
 import { PopupWindow } from "../components/PopupWindow";
 
 const Tv = () => {
-  const key = process.env.REACT_APP_TV_API_KEY;
+  
 
   const [movieList, setMovieList] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null)
   const [isPopupWindon, setIsPopupWindow] = useState(false)
 
-  useEffect(() => {
-    fetchTv();
-  }, [key]);
-
+  const keyToApp = process.env.REACT_APP_TV_API_KEY
   const fetchTv = () => {
     axios
       .get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=a686a0ae574126000682bb05784b5cc6`
+        `https://api.themoviedb.org/3/discover/movie?api_key=${keyToApp}`
       )
       .then((res) => {
         const movies = res.data.results;
@@ -24,6 +21,10 @@ const Tv = () => {
         setMovieList(movies);
       });
   };
+
+  useEffect(() => {
+    fetchTv();
+  }, [keyToApp]);
 
   const handleImageClick = (movie) => {
     console.log("selected movie is:", movie)
